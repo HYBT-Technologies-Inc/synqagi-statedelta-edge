@@ -56,3 +56,55 @@ Evidence-Based Interpretation
 Safety Validation
       ↓
 Structured Decision or Physical Action
+Project Objectives
+Run completely offline on an Arm64 edge device.
+Preserve privacy by processing sensitive data locally.
+Support heterogeneous physical and AI-system states.
+Produce measurable and reproducible evidence.
+Reduce model size, memory use, latency, and energy consumption.
+Compare baseline and optimized implementations on the same device.
+Provide reusable schemas, adapters, evaluation tools, and deployment workflows.
+Initial Architecture
+Sensors / Telemetry / Images / Model Evaluations
+                         ↓
+                  Modality Adapters
+                         ↓
+                    State Capsule
+                         ↓
+              StateDelta Decision Engine
+                         ↓
+                  Safety Validator
+                         ↓
+         Alert / Inspection / Control / Stop
+Competition
+
+This repository is being developed for the Arm AI Optimization Challenge 2026, under the Physical AI track.
+
+The project will include:
+
+a reproducible baseline;
+a fine-tuned compact model;
+Arm64 edge deployment;
+measurable optimization results;
+offline physical-state demonstrations;
+ModelDelta fine-tuning assurance;
+public source code and setup instructions.
+Current Status
+
+Architecture and benchmark implementation in progress.
+
+Benchmark results and performance claims will be published only after reproducible testing on the target Jetson hardware.
+
+Licensing
+
+Source code is licensed under the Apache License 2.0.
+
+Third-party models, datasets, weights, and dependencies remain subject to their respective licences.
+
+Trademark
+
+SYNQAGI is a registered UK trade mark.
+
+The SYNQAGI name, logo, and associated brand assets are not licensed under the Apache License 2.0. No trade mark licence is granted except for reasonable use necessary to identify the origin of this software.
+
+Copyright © AISC TECHNOLOGIES LTD and project contributors.
