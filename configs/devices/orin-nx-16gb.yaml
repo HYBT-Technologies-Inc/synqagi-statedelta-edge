@@ -1,0 +1,4 @@
+device: jetson-orin-nx-16gb
+role: extended-validation-target
+offline_required: true
+notes: "Use for multimodal, larger-model, concurrency, and scale-up validation. Do not mix results with Nano optimization claims."

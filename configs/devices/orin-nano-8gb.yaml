@@ -1,0 +1,6 @@
+device: jetson-orin-nano-8gb
+role: primary-edge-target
+memory_gate_gb: 6.5
+offline_required: true
+stability_minutes: 30
+notes: "Record exact module, carrier, JetPack, L4T, power mode, storage, and cooling before benchmarking."

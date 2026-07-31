@@ -1,0 +1,104 @@
+{
+  "contract_version": "1.0.0",
+  "capsule_id": "cap-motor-0001",
+  "timestamp": "2026-08-01T00:00:00Z",
+  "subject": {
+    "id": "motor-07",
+    "type": "industrial_motor",
+    "profile": "predictive-maintenance"
+  },
+  "expected": {
+    "requirements": {
+      "temperature_max_c": 70.0,
+      "vibration_growth_max_percent": 8.0,
+      "load_range_percent": [40.0, 85.0]
+    },
+    "tolerances": {},
+    "baseline": {
+      "vibration_growth_percent": 2.0
+    }
+  },
+  "observed": {
+    "measurements": {
+      "temperature_c": 67.0,
+      "load_percent": 79.0,
+      "vibration_growth_percent": 14.0
+    },
+    "features": {
+      "vibration_trend": "increasing"
+    },
+    "events": {}
+  },
+  "history": {
+    "window": [
+      {"vibration_growth_percent": 7.0},
+      {"vibration_growth_percent": 9.0},
+      {"vibration_growth_percent": 12.0},
+      {"vibration_growth_percent": 14.0}
+    ],
+    "summary": {
+      "consecutive_growth_periods": 4
+    }
+  },
+  "context": {
+    "operating_mode": "continuous",
+    "environment": {},
+    "task": "maintain safe operation"
+  },
+  "policies": {
+    "conformance": [
+      {
+        "id": "temperature-within-normal-limit",
+        "path": "observed.measurements.temperature_c",
+        "operator": "lte",
+        "value": 70.0,
+        "severity": "HIGH",
+        "action": "REDUCE_LOAD",
+        "evidence_type": "measured_threshold_result"
+      },
+      {
+        "id": "vibration-growth-within-limit",
+        "path": "observed.measurements.vibration_growth_percent",
+        "operator": "lte",
+        "value": 8.0,
+        "severity": "HIGH",
+        "action": "REDUCE_LOAD",
+        "evidence_type": "measured_threshold_result"
+      },
+      {
+        "id": "load-within-operating-range",
+        "path": "observed.measurements.load_percent",
+        "operator": "between",
+        "value": [40.0, 85.0],
+        "severity": "MEDIUM",
+        "action": "REQUEST_INSPECTION",
+        "evidence_type": "measured_range_result"
+      }
+    ],
+    "safety": [
+      {
+        "id": "emergency-temperature-limit",
+        "path": "observed.measurements.temperature_c",
+        "operator": "lt",
+        "value": 90.0,
+        "severity": "CRITICAL",
+        "action": "STOP",
+        "evidence_type": "measured_emergency_rule"
+      }
+    ],
+    "allowed_actions": ["CONTINUE", "MONITOR", "REDUCE_LOAD", "REQUEST_INSPECTION", "STOP"],
+    "safe_fallback": "STOP"
+  },
+  "provenance": {
+    "source_type": "simulated_telemetry",
+    "adapter": "telemetry-json-adapter",
+    "adapter_version": "0.1.0",
+    "data_hash": "demo-only"
+  },
+  "privacy": {
+    "processing": "local",
+    "raw_data_retained": false,
+    "export_allowed": false,
+    "network_required": false
+  }
+}

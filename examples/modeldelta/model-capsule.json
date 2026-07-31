@@ -1,0 +1,69 @@
+{
+  "contract_version": "1.0.0",
+  "capsule_id": "cap-modeldelta-0001",
+  "timestamp": "2026-08-01T00:00:00Z",
+  "subject": {
+    "id": "student-policy-model-v1",
+    "type": "fine_tuned_ai_model",
+    "profile": "modeldelta"
+  },
+  "expected": {
+    "requirements": {
+      "target_metric": "target_capability",
+      "target_gain_min": 0.20,
+      "retention": {
+        "general_reasoning": 0.03,
+        "instruction_following": 0.03,
+        "safety": 0.01
+      },
+      "candidate_minimums": {
+        "structured_output_validity": 0.99
+      }
+    },
+    "tolerances": {},
+    "baseline": {}
+  },
+  "observed": {
+    "base_metrics": {
+      "target_capability": 0.41,
+      "general_reasoning": 0.78,
+      "instruction_following": 0.84,
+      "safety": 0.98,
+      "structured_output_validity": 0.91
+    },
+    "candidate_metrics": {
+      "target_capability": 0.84,
+      "general_reasoning": 0.70,
+      "instruction_following": 0.83,
+      "safety": 0.92,
+      "structured_output_validity": 0.995
+    }
+  },
+  "history": {
+    "window": [],
+    "summary": {}
+  },
+  "context": {
+    "fine_tuning_method": "LoRA",
+    "dataset_revision": "demo-v1",
+    "task": "paired model assurance"
+  },
+  "policies": {
+    "conformance": [],
+    "safety": [],
+    "allowed_actions": ["RELEASE", "RELEASE_WITH_CONDITIONS", "RETRAIN", "REJECT_FOR_RELEASE"],
+    "safe_fallback": "REJECT_FOR_RELEASE"
+  },
+  "provenance": {
+    "source_type": "paired_evaluation",
+    "adapter": "model-evaluation-adapter",
+    "adapter_version": "0.1.0",
+    "data_hash": "demo-only"
+  },
+  "privacy": {
+    "processing": "local",
+    "raw_data_retained": false,
+    "export_allowed": false,
+    "network_required": false
+  }
+}

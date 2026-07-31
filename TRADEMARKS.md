@@ -38,5 +38,4 @@ Requests concerning trade mark or brand use should be directed to AISC TECHNOLOG
 
 ---
 
-Copyright © AISC TECHNOLOGIES LTD.
-All trade mark rights reserved.
+Copyright © AISC TECHNOLOGIES LTD. All trade mark rights reserved.

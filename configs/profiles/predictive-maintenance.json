@@ -1,0 +1,5 @@
+{
+  "profile": "predictive-maintenance",
+  "canonical_actions": ["CONTINUE", "MONITOR", "REDUCE_LOAD", "REQUEST_INSPECTION", "STOP"],
+  "safe_fallback": "STOP"
+}

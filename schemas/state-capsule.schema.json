@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synqagi.example/schemas/state-capsule.schema.json",
+  "title": "SYNQAGI State Capsule",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "capsule_id",
+    "subject",
+    "expected",
+    "observed",
+    "history",
+    "context",
+    "policies",
+    "provenance",
+    "privacy"
+  ],
+  "properties": {
+    "contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "capsule_id": {"type": "string", "minLength": 1},
+    "timestamp": {"type": ["string", "null"]},
+    "subject": {
+      "type": "object",
+      "required": ["id", "type", "profile"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "profile": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "expected": {"type": "object"},
+    "observed": {"type": "object"},
+    "history": {"type": "object"},
+    "context": {"type": "object"},
+    "policies": {"type": "object"},
+    "provenance": {"type": "object"},
+    "privacy": {
+      "type": "object",
+      "required": ["processing", "raw_data_retained", "export_allowed"],
+      "properties": {
+        "processing": {"const": "local"},
+        "raw_data_retained": {"type": "boolean"},
+        "export_allowed": {"type": "boolean"},
+        "network_required": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

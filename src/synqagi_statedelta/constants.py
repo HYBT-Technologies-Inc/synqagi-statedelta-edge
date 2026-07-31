@@ -1,0 +1,27 @@
+SUPPORTED_CONTRACT_MAJOR = 1
+DECISION_VERSION = "1.0.0"
+
+CONFORMANCE_VALUES = {
+    "PASS",
+    "PASS_WITH_WARNING",
+    "INSUFFICIENT_EVIDENCE",
+    "FAIL",
+    "CRITICAL_FAIL",
+}
+
+STATE_VALUES = {
+    "NORMAL",
+    "CHANGED",
+    "DEGRADING",
+    "OUT_OF_TOLERANCE",
+    "UNSAFE",
+    "UNKNOWN",
+}
+
+SEVERITY_ORDER = {
+    "NONE": 0,
+    "LOW": 1,
+    "MEDIUM": 2,
+    "HIGH": 3,
+    "CRITICAL": 4,
+}

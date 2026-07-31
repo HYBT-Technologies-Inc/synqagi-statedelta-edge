@@ -1,0 +1,5 @@
+{
+  "profile": "modeldelta",
+  "canonical_actions": ["RELEASE", "RELEASE_WITH_CONDITIONS", "RETRAIN", "REJECT_FOR_RELEASE"],
+  "safe_fallback": "REJECT_FOR_RELEASE"
+}
